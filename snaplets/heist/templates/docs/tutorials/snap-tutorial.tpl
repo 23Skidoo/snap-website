@@ -1,8 +1,8 @@
-<bind tag="subtitle">: Snaplets Tutorial</bind>
+<bind tag="subtitle">: Snap Tutorial</bind>
 <static>
   <apply template="page">
     <div class="singlecolumn">
-      <markdown file="snaplets-tutorial.lhs"/>
+      <markdown file="snap-tutorial.md"/>
     </div>
   </apply>
 </static>

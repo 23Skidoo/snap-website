@@ -4,7 +4,7 @@
     <div id="about" class="section left">
       <div class="inner">
         <h2>About Snaplets</h2>
-        <p><img src="/media/img/snaplet.png" align="left" style="display: inline; padding: 0 14px 14px 14px;" /><strong><a href="docs/tutorials/snaplets-tutorial">Snaplets</a></strong> are self
+        <p><img src="/media/img/snaplet.png" align="left" style="display: inline; padding: 0 14px 14px 14px;" /><strong><a href="docs/tutorials/snap-tutorial#snaplets">Snaplets</a></strong> are self
         contained pieces of functionality that you can include in your web
         apps.</p>  <p>You can develop your own snaplets and publish them as a
         standalone project on hackage completely independent of the Snap team.

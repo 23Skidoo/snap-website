@@ -14,15 +14,25 @@
           you already have Cabal set up, then getting Snap should be as simple
           as running two commands:</p>
         <pre class="code">$ cabal update
-$ cabal install snap</pre>
+$ cabal install snap snap-templates</pre>
 
         <p>If you don't have <tt>GHC</tt> and <tt>cabal</tt> installed, the
           easiest way to get them is with
           the <a href="http://hackage.haskell.org/platform/">Haskell Platform</a>
           binary installer.</p>
 
-        <p>After Snap is installed, check out the <a href="/docs/quickstart">quick
-            start</a> for instructions on getting your project started.</p>
+        <p> By default, <tt>cabal</tt> will install executables to
+        <tt>"$HOME/.cabal/bin"</tt>, so you will need to add that location to
+        your system path in order to use the <tt>snap</tt> executable. On
+        Unix-like systems this can be done by adding the line</p>
+        <pre class="code">PATH=$HOME/.cabal/bin:$PATH</pre>
+
+        <p>to your <tt>~/.profile</tt> and running <tt>source
+        ~/.profile</tt>.</p>
+
+        <p>After Snap is installed and set up, check out the <a
+        href="/docs/tutorials/snap-tutorial">tutorial</a> for instructions on
+        getting your project started.</p>
 
         <h2>Buildbot</h2>
         <p>We have set up

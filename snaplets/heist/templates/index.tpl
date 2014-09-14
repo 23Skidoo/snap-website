@@ -85,14 +85,14 @@ $ mkdir foo; cd foo; snap init</pre>
                 <h2>New: Snaplets</h2>
                 <p>
                   In Snap 0.6 we released an exciting new extension system called
-                  <strong><a href="/docs/tutorials/snaplets-tutorial">&#8220;snaplets&#8221;</a></strong>.
+                  <strong><a href="/docs/tutorials/snap-tutorial#snaplets">&#8220;snaplets&#8221;</a></strong>.
                   It is now easier then ever before to write, share, reuse
                   code, and get your applications up and running in no time.
                 </p>
                 <p>
                   <strong><a href="/download">Install</a></strong> Snap now, check out the
                   <a href="/snaplets">available snaplets</a>, and
-                  start <a href="/docs/tutorials/snaplets-tutorial">writing</a>
+                  start <a href="/docs/tutorials/snap-tutorial#snaplets">writing</a>
                   your own!
                 </p>
               </div><!--end inner-->

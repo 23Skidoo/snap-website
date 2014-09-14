@@ -19,7 +19,7 @@ list of the major changes since 0.5.5:
     and automatic snaplet resource installation are some of the notable things
     the snaplet infrastructure does for you. For more information on getting
     started with snaplets, check out the [snaplet
-    tutorial](/docs/tutorials/snaplets-tutorial).  Also be sure to take a look
+    tutorial](/docs/tutorials/snap-tutorial#snaplets).  Also be sure to take a look
     at the [API documentation](http://hackage.haskell.org/package/snap-0.6.0).
     It is written as prose and should function as a more comprehensive,
     api-oriented tutorial.
