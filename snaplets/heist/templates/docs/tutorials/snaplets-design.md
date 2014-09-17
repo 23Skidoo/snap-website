@@ -64,9 +64,9 @@ to Edward Kmett for pointing this out and writing the code for us.
 The second important component of snaplets is initialization.  This involves
 setting up the state used by the handlers as well as defining a snaplet's
 routes and cleanup actions, reading on-disk config files, and initializing and
-interacting with other snaplets.  `Initializer` still uses a LensT
+interacting with other snaplets.  `Initializer` still uses a `LensT`
 implementation because it does not fit the more specialized case for which
-Lensed is optimized.  But it is similar enough that we can still refer to
+`Lensed` is optimized.  But it is similar enough that we can still refer to
 snaplets using the same lenses that we use in Handlers.  These similarities
 are abstracted in the MonadSnaplet type class.
 
@@ -93,11 +93,11 @@ communicate all initializer status and errors.
 The Heist snaplet is a fairly complex snaplet that illustrates a number of
 concepts that you may encounter while writing your own snaplets.  The biggest
 issue arises because Heist's TemplateState is parameterized by the handler
-monad.  This means that if you want to do something like a with transformation
+monad.  This means that if you want to do something like a `with` transformation
 with a lens `Lens b v` you will naturally want to apply the same
-transformation to the Handler parameter of the TemplateState.  Unfortunately,
+transformation to the `Handler` parameter of the `TemplateState`.  Unfortunately,
 due to Heist's design, this is computationally intensive, must be performed at
-runtime, and requires that you have a bijection between b and v.  To avoid
+runtime, and requires that you have a bijection between `b` and `v`.  To avoid
 this issue, we only use the base application state, `TemplateState (Handler b
 b)`.
 
@@ -105,25 +105,24 @@ The basic functions for manipulating templates are not affected by this
 decision.  But the splice functions are more problematic since they are the
 ones that actually use TemplateState's monad parameter.
 
-You will also notice that the Heist snaplet includes a HasHeist type class.
-Normally to use snaplets, you must "call" them using with or withTop,
+You will also notice that the `Heist` snaplet includes a `HasHeist` type class.
+Normally to use snaplets, you must "call" them using `with` or `withTop`,
 passing the lens to the desired snaplet.  This is useful because it allows you
 to have multiple instances of the same snaplet.  However, there may be times
 when you know you will only ever need a single instance of a particular
 snaplet and you'd like to avoid the need to manually change the context every
 time.
 
-This is where type classes are useful.  The HasHeist type class essentially
+This is where type classes are useful.  The `HasHeist` type class essentially
 defines some global compile-time state associating a particular lens to be
 used for calls to Heist within a particular type.  To use Heist, just define a
-HasHeist instance for your application or snaplet type and all the Heist API
-functions will work without needing with.  Your HasHeist instance will
+`HasHeist` instance for your application or snaplet type and all the Heist API
+functions will work without needing with.  Your `HasHeist` instance will
 look something like this:
 
     instance HasHeist App where
         heistLens = subSnaplet heist
 
-The call to subSnaplet is required because HasHeist needs a `Lens
+The call to `subSnaplet` is required because `HasHeist` needs a `Lens
 (Snaplet v) (Snaplet (Heist b))` instead of the lens `Lens v (Snaplet (Heist
-b))` that you will get from mkLabels.
-
+b))` that you will get from `mkLabels`.
